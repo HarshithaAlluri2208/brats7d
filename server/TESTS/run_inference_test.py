@@ -13,13 +13,17 @@ import requests
 import json
 from pathlib import Path
 
-# Add server directory to path for imports
-SERVER_DIR = Path(__file__).parent.parent
+# ===============================
+# Project Paths (Portable)
+# ===============================
+PROJECT_ROOT = Path(__file__).resolve().parent.parent.parent
+SERVER_DIR = PROJECT_ROOT / "server"
+
 sys.path.insert(0, str(SERVER_DIR))
 
-# Configuration
 API_BASE_URL = "http://localhost:8000"
-SAMPLE_DATA_DIR = Path(r"C:\Users\allur\brats7d_old\data\BraTS20_Training_001")
+
+SAMPLE_DATA_DIR = PROJECT_ROOT / "data" / "BraTS20_Training_001"
 
 # Expected file names in sample data directory
 EXPECTED_FILES = {
