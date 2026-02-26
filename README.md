@@ -7,7 +7,7 @@ Due to dataset licensing and large file sizes, MRI datasets are not included in 
 Please download the sample MRI case from the link below:
 
 👉 Google Drive Download:
-[PASTE YOUR DRIVE LINK HERE]
+https://drive.google.com/drive/folders/1_mjzIk4lloQ6tp7MuzWjpOPinCNvkmZx?usp=sharing
 
 ## Run Instructions
 This project provides an automated startup script.
