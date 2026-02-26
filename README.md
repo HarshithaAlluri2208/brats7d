@@ -2,31 +2,19 @@
 
 Medical imaging web app for brain tumor segmentation. Built with Next.js, Tailwind CSS, ShadCN-style UI, Framer Motion, and Zustand.
 
-### Features
-- Soft dark theme and clean typography
-- Landing page with CTA and animations
-- Dashboard for MRI upload and mock inference
-- Visualization with slice viewer and overlay toggle
+## Sample MRI Case
+Due to dataset licensing and large file sizes, MRI datasets are not included in this repository.
+Please download the sample MRI case from the link below:
 
-### Getting Started
-1. Install dependencies:
-```bash
-npm install
-```
-2. Run the dev server:
-```bash
-npm run dev
-```
-Open `http://localhost:3000`.
+👉 Google Drive Download:
+[PASTE YOUR DRIVE LINK HERE]
 
-### Notes
-- File upload currently generates a synthetic 3D volume for demo purposes.
-- "Run Segmentation" creates a procedural ellipsoidal mask as a stand-in for a model.
+## Run Instructions
+This project provides an automated startup script.
 
-### Tech
-- Next.js App Router, TypeScript
-- Tailwind CSS
-- ShadCN-style primitives (custom lightweight components in `components/ui`)
-- Framer Motion for animations
-- Zustand for client state
-"# brats7d" 
+Step 1 — Clone Repository
+--> git clone https://github.com/HarshithaAlluri2208/brats7d.git
+--> cd brats7d
+
+Step 2 — Run Complete System
+--> Simply execute: .\run_all.bat
