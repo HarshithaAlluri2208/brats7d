@@ -1,0 +1,41 @@
+# Node
+node_modules/
+.next/
+out/
+dist/
+
+# Python
+venv/
+__pycache__/
+*.pyc
+*.pyo
+
+# Server outputs
+server/outputs/
+server/temp/
+
+# Environment
+.env
+.env.local
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Model files
+*.pt
+*.pth
+*.h5
+
+# Nifti / Medical files
+*.nii
+*.nii.gz
+
+data/
+inference_outputs/
+logs/
+*.npy
+*.zip

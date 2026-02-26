@@ -1,0 +1,12 @@
+# deploy/app.py
+from fastapi import FastAPI
+app = FastAPI()
+
+@app.get("/")
+def home():
+    return {"message": "brats7d demo — model not loaded yet"}
+
+@app.post("/predict")
+def predict():
+    # TODO: accept an uploaded file, load model, run inference
+    return {"prediction": "placeholder"}

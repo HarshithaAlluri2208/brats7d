@@ -1,0 +1,6 @@
+# deploy/streamlit_app.py
+import streamlit as st
+st.title("brats7d demo")
+uploaded_file = st.file_uploader("Upload NIfTI (.nii or .nii.gz) file")
+if uploaded_file:
+    st.write("File received. Implement inference to process it.")

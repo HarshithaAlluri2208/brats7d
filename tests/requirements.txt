@@ -1,0 +1,7 @@
+# Test dependencies
+pytest>=7.4.0
+pytest-cov>=4.1.0
+requests>=2.31.0
+numpy>=1.24.0
+nibabel>=5.0.0
+
