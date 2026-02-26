@@ -26,6 +26,15 @@ from utils.visualization import (
 )
 from utils.mesh_generation import generate_tumor_meshes, generate_brain_mesh
 
+# ===============================
+# PROJECT ROOT AUTO-DETECTION
+# ===============================
+PROJECT_ROOT = Path(__file__).resolve().parent.parent
+
+CHECKPOINT_PATH = PROJECT_ROOT / "models" / "checkpoint_epoch50.pth"
+TEMP_DIR = PROJECT_ROOT / "server" / "temp"
+OUTPUT_DIR = PROJECT_ROOT / "server" / "outputs"
+
 # Configure logging
 logging.basicConfig(
     level=logging.INFO,
@@ -37,9 +46,8 @@ logger = logging.getLogger(__name__)
 app = FastAPI(title="NeuroVision Inference Server", version="1.0.0")
 
 # Configuration
-CHECKPOINT_PATH = r"C:\Users\allur\brats7d_old\models\checkpoint_epoch50.pth"
-TEMP_DIR = Path(r"C:\Users\allur\brats7d_old\server\temp")
-OUTPUT_DIR = Path(r"C:\Users\allur\brats7d_old\server\outputs")
+TEMP_DIR.mkdir(parents=True, exist_ok=True)
+OUTPUT_DIR.mkdir(parents=True, exist_ok=True)
 DEVICE = "cuda" if torch.cuda.is_available() else "cpu"
 BASE_URL = "http://localhost:8000"
 
@@ -161,7 +169,7 @@ async def startup_event():
     """Load model on server startup."""
     global model, model_loaded
     try:
-        logger.info(f"Loading model from {CHECKPOINT_PATH} on device {DEVICE}")
+        logger.info(f"Loading model from {CHECKPOINT_PATH.resolve()} on device {DEVICE}")
         logger.info(f"CORS origin: {CORS_ORIGIN}")
         logger.info(f"API key authentication: {'ENABLED' if API_KEY_ENABLED else 'DISABLED'}")
         model = get_cached_model(checkpoint_path=CHECKPOINT_PATH, device=DEVICE)
